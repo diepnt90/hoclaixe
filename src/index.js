@@ -1,19 +1,19 @@
 /**
- * Reverse proxy taplaixe.vn through a Cloudflare Worker.
+ * Reverse proxy dongdohanoi.vn through a Cloudflare Worker.
  * Deploy only if you are authorized to republish/proxy upstream content.
  */
-const UPSTREAM = "https://taplaixe.vn";
-const UPSTREAM_HOST = "taplaixe.vn";
+const UPSTREAM = "https://dongdohanoi.vn";
+const UPSTREAM_HOST = "dongdohanoi.vn";
 
 function replaceHost(text, publicHost) {
   return text
-    .replace(/https:\/\/(?:www\.)?taplaixe\.vn/gi, "https://" + publicHost)
-    .replace(/http:\/\/(?:www\.)?taplaixe\.vn/gi, "https://" + publicHost)
-    .replace(/\/\/(?:www\.)?taplaixe\.vn/gi, "//" + publicHost);
+    .replace(/https:\/\/(?:www\.)?dongdohanoi\.vn/gi, "https://" + publicHost)
+    .replace(/http:\/\/(?:www\.)?dongdohanoi\.vn/gi, "https://" + publicHost)
+    .replace(/\/\/(?:www\.)?dongdohanoi\.vn/gi, "//" + publicHost);
 }
 
 function rewriteSetCookie(value, publicHost) {
-  return value.replace(/;\s*domain\s*=\s*\.?taplaixe\.vn/gi, "; Domain=" + publicHost);
+  return value.replace(/;\s*domain\s*=\s*\.?dongdohanoi\.vn/gi, "; Domain=" + publicHost);
 }
 
 export default {
