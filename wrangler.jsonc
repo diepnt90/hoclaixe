@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hoclaixe-proxy",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "meo600caulythuyetlaixe.store", "custom_domain": true }
+  ]
+}
