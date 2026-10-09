@@ -1,6 +1,6 @@
 # hoclaixe - Cloudflare Worker reverse proxy
 
-Reverse proxy for `https://dongdohanoi.vn` at `https://meo600caulythuyetlaixe.store`.
+Reverse proxy for `https://sanlaisuat.netlify.app` at `https://meo600caulythuyetlaixe.store`.
 
 ## Deploy
 
@@ -13,7 +13,7 @@ The Wrangler custom-domain route creates/manages the Worker domain mapping (incl
 
 ## Important limitations
 
-- This is an HTTP reverse proxy. URLs on dongdohanoi.vn itself can be rewritten, but cross-domain fetches or dynamically constructed URLs may still call external hosts.
+- This is an HTTP reverse proxy. URLs on sanlaisuat.netlify.app itself can be rewritten, but cross-domain fetches or dynamically constructed URLs may still call external hosts.
 - Site security policies, upstream anti-bot protections, service workers, signed URLs, browser storage, WebSockets, some binary manifests and third-party integrations can require extra changes.
 - Rewriting textual assets buffers them and removes the upstream Content-Security-Policy, so use only when authorized and review your security posture. No promise of a fully faithful mirror.
 - Authentication/cookies and submitted form data pass through the proxy; disclose this to users and don't deploy this for third-party credential collection.
