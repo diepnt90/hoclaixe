@@ -1,19 +1,19 @@
 /**
- * Reverse proxy dongdohanoi.vn through a Cloudflare Worker.
+ * Reverse proxy sanlaisuat.netlify.app through a Cloudflare Worker.
  * Deploy only if you are authorized to republish/proxy upstream content.
  */
-const UPSTREAM = "https://dongdohanoi.vn";
-const UPSTREAM_HOST = "dongdohanoi.vn";
+const UPSTREAM = "https://sanlaisuat.netlify.app";
+const UPSTREAM_HOST = "sanlaisuat.netlify.app";
 
 function replaceHost(text, publicHost) {
   return text
-    .replace(/https:\/\/(?:www\.)?dongdohanoi\.vn/gi, "https://" + publicHost)
-    .replace(/http:\/\/(?:www\.)?dongdohanoi\.vn/gi, "https://" + publicHost)
-    .replace(/\/\/(?:www\.)?dongdohanoi\.vn/gi, "//" + publicHost);
+    .replace(/https:\/\/(?:www\.)?sanlaisuat\.netlify\.app/gi, "https://" + publicHost)
+    .replace(/http:\/\/(?:www\.)?sanlaisuat\.netlify\.app/gi, "https://" + publicHost)
+    .replace(/\/\/(?:www\.)?sanlaisuat\.netlify\.app/gi, "//" + publicHost);
 }
 
 function rewriteSetCookie(value, publicHost) {
-  return value.replace(/;\s*domain\s*=\s*\.?dongdohanoi\.vn/gi, "; Domain=" + publicHost);
+  return value.replace(/;\s*domain\s*=\s*\.?sanlaisuat\.netlify\.app/gi, "; Domain=" + publicHost);
 }
 
 export default {
